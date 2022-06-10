@@ -8,8 +8,8 @@ namespace ProblematicProblem
     {
         
         
-static bool cont = true;
-        static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
+
+        static readonly List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
         static void Main(string[] args)
 {
             Random rng = new Random();
@@ -35,7 +35,7 @@ static bool cont = true;
     int userAge = int.Parse(Console.ReadLine());
     Console.WriteLine();
     Console.Write("Would you like to see the current list of activities? Sure/No thanks: ");
-    bool seeList = (Console.ReadLine().ToLower() == "sure") ? true : false;
+    bool seeList = Console.ReadLine().ToLower() == "sure";
     if (seeList)
     {
         foreach (string activity in activities)
@@ -45,7 +45,7 @@ static bool cont = true;
         }
         Console.WriteLine();
         Console.Write("Would you like to add any activities before we generate one? yes/no: ");
-        bool addToList = (Console.ReadLine().ToLower() == "yes") ? true : false;
+        bool addToList = Console.ReadLine().ToLower() == "yes";
         Console.WriteLine();
         while (addToList)
         {
@@ -59,7 +59,7 @@ static bool cont = true;
             }
             Console.WriteLine();
             Console.WriteLine("Would you like to add more? yes/no: ");
-            addToList = (Console.ReadLine().ToLower() == "yes") ? true : false;
+            addToList = Console.ReadLine().ToLower() == "yes";
                     
         }
     }
@@ -91,7 +91,7 @@ static bool cont = true;
         }
                 Console.Write($"Ah got it! {userName} , your random activity is: {randomActivity}! Is this ok or do you want to grab another activity? Keep/Redo: ");
                 Console.WriteLine();
-                cont = (Console.ReadLine().ToLower() == "keep") ? false : true ;
+                cont = Console.ReadLine().ToLower() != "keep";
     }
 }
     }
