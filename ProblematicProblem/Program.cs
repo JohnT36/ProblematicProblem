@@ -12,6 +12,7 @@ namespace ProblematicProblem
         static readonly List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
         static void Main(string[] args)
 {
+
             Random rng = new Random();
             bool cont;
             do
